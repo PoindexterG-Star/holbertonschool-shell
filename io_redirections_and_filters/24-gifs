@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -RSl --size bytes | sort | rev | cut -d " " -f 1 | cut -d "." --complement -f 1 | rev | sort
+find . -type f -name "*.gif" -printf "%f\n" | sort -f | sed 's/\.[^.]*$//' | tr '\n' ' '
